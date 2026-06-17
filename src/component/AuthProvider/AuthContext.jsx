@@ -1,0 +1,56 @@
+import { AuthProvider } from "./CreateContext";
+
+const AuthContext = ({ children }) => {
+  // const [token, setToken] = useState(() => localStorage.getItem("accessToken"));
+
+
+  // const { data, isLoading, refetch } = useQuery({
+  //   queryKey: ["userProfile"],
+  //   queryFn: () =>
+  //     fetch(`${config.backendUrl}/user/get-profile`, {
+  //       method: "GET",
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //     }).then((res) => {
+  //       if (!res.ok) {
+  //         throw new Error("Failed to load profile");
+  //       }
+  //       return res.json();
+  //     }),
+  // });
+
+  // const user = useMemo(() => {
+  //   if (!token) return null;
+  //   try {
+  //     return jwtDecode(token);
+  //   } catch (error) {
+  //     console.error("JWT Decode Error:", error);
+  //     return null;
+  //   }
+  // }, [token]);
+
+
+  // const loading = false;
+
+  const authInfo = {
+    // setToken,
+    // token,
+    // user,
+    // role: user?.role,
+    // loading,
+    // data, 
+    // isLoading, 
+    // refetch
+  };
+
+
+  return (
+    <AuthProvider.Provider value={authInfo}>
+      {children}
+    </AuthProvider.Provider>
+  );
+};
+
+export default AuthContext;
