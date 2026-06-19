@@ -6,21 +6,25 @@ import Root from './component/pages/Root/Root';
 import AuthContext from './component/AuthProvider/AuthContext';
 import { HelmetProvider } from 'react-helmet-next';
 import React from 'react';
+import HomeRoot from './component/pages/HomeRoot/HomeRoot';
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
-    path : '/',
-    element : <Root></Root>,
-    children : [
-
+    path: '/',
+    element: <Root></Root>,
+    children: [
+      {
+        path: '/',
+        element: <HomeRoot></HomeRoot>
+      }
     ]
   }
 ]);
 
 createRoot(document.getElementById('root')).render(
- <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}>
     <AuthContext>
       <HelmetProvider>
         <React.StrictMode>
