@@ -1,4 +1,4 @@
-import { ArrowDownLeft, Award, CheckCircle2, Trophy, Wallet } from "lucide-react";
+import {  Award, CheckCircle2, Trophy, Wallet } from "lucide-react";
 import SurveyCard from "../surveyCards/SurveyCard";
 
 const Dashboard = () => {
@@ -65,7 +65,7 @@ const Dashboard = () => {
 
     const getActivityIcon = (type) => {
         if (type === "survey") return <CheckCircle2 className="w-5 h-5 text-blue-500" />;
-        if (type === "withdrawal") return <ArrowDownLeft className="w-5 h-5 text-red-500" />;
+        if (type === "withdrawal") return <Wallet className="w-5 h-5 text-red-500" />;
         return <Trophy className="w-5 h-5 text-amber-500" />;
     };
 
