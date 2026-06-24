@@ -57,8 +57,8 @@ const Navbar = ({ toggleSidebar, isCollapsed }) => {
                         className="flex items-center gap-3 focus:outline-none hover:opacity-90 transition-opacity text-left"
                     >
                         <div className="text-right hidden sm:block cursor-pointer">
-                            <p className="text-[13px] font-bold text-slate-800 leading-tight">Admin Profile</p>
-                            <p className="text-[9px] text-slate-400 font-semibold uppercase tracking-wider mt-1">Super Administrator</p>
+                            <p className="text-[13px] font-bold text-slate-800 leading-tight">User Profile</p>
+                            <p className="text-[9px] text-slate-400 font-semibold uppercase tracking-wider mt-1">see your profile</p>
                         </div>
                         <div className="relative">
                             <img
@@ -71,10 +71,6 @@ const Navbar = ({ toggleSidebar, isCollapsed }) => {
 
                     {isOpen && (
                         <div className="absolute right-0 mt-2 w-48 bg-white border border-slate-100 globalCardRadius shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-200 cursor-pointer">
-                            <div className="px-4 py-2 border-b border-slate-50 sm:hidden">
-                                <p className="text-xs font-bold text-slate-800">Admin Profile</p>
-                                <p className="text-[10px] text-slate-400 font-medium">Super Administrator</p>
-                            </div>
                             <NavLink to='/admin-profile' > 
                                 <button onClick={() => setIsOpen(false)} className="w-full flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors text-left cursor-pointer">
                                     <User className="w-4 h-4 text-slate-400" />

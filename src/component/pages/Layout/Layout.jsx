@@ -20,7 +20,7 @@ const Layout = () => {
             <div className={`flex flex-col min-h-screen transition-all duration-300 ${isCollapsed ? 'md:pl-20' : 'md:pl-64'
                 }`}>
                 <Navbar toggleSidebar={toggleSidebar} isCollapsed={isCollapsed} />
-                <main className="pt-18 pb-10 flex-1 px-4 md:px-6 max-w-7xl w-full mx-auto">
+                <main className="pt-18 pb-10 flex-1 px-4 md:px-6 max-w-7xl w-full mx-auto app-container">
                     <Outlet />
                 </main>
             </div>

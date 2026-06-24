@@ -36,9 +36,20 @@ body {
     border-color: #0F4C81;
 }
 
+.globalBorder {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #8faec9;
+}
+/* .globalBorder {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #92b5d3;
+} */
+
 
 @layer utilities {
     .app-container {
-        @apply max-w-[1750px] mx-auto px-4 sm:px-6 lg:px-8;
+        @apply w-full max-w-[2150px] mx-auto px-4 sm:px-6 lg:px-8 mt-20;
     }
 }

@@ -1,4 +1,4 @@
-import { ClipboardList, Columns2, CreditCard, LayoutGrid, LogOut, Settings, TrendingUp, Users, VenusAndMarsIcon, X, Zap } from "lucide-react";
+import { ClipboardList, Columns2, CreditCard, LayoutGrid, LogOut, Settings, TrendingUp,  X, Zap } from "lucide-react";
 import { NavLink } from "react-router";
 
 const SideBar = ({ isOpen, closeSidebar, isCollapsed, setIsCollapsed }) => {
@@ -28,11 +28,11 @@ const SideBar = ({ isOpen, closeSidebar, isCollapsed, setIsCollapsed }) => {
                 />
             )}
 
-            <aside className={`fixed top-0 bottom-0 left-0 bg-white border-r border-gray-200 flex flex-col justify-between py-6 z-50 transition-all duration-300 ${isCollapsed ? 'md:w-20' : 'md:w-64'
+            <aside className={`fixed top-0 bottom-0 left-0 bg-white border-r border-gray-200 flex flex-col justify-between py-4 z-50 transition-all duration-300 ${isCollapsed ? 'md:w-20' : 'md:w-64'
                 } ${isOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0'}`}>
 
                 <div className="flex flex-col gap-6 overflow-x-hidden relative">
-                    <div className={`flex items-center justify-between px-6 ${isCollapsed ? 'md:px-4 md:justify-center' : ''}`}>
+                    <div className={`flex items-center justify-between px-6 ${isCollapsed ? 'md:px-4 mb-5 w-full md:justify-center' : ''}`}>
                         <div className={`transition-all duration-200 ${isCollapsed ? 'md:hidden' : 'block'}`}>
                             <h1 className="text-xl font-bold globalTextColor tracking-tight">SurveyPanel</h1>
                             <p className="text-[11px] text-gray-400 font-medium tracking-wide">Respondent Portal</p>
@@ -44,7 +44,7 @@ const SideBar = ({ isOpen, closeSidebar, isCollapsed, setIsCollapsed }) => {
 
                         <button
                             onClick={() => setIsCollapsed(!isCollapsed)}
-                            className="hidden md:flex absolute right-4 top-1 p-1.5 globalMediumRadius bg-gray-50 text-gray-400 border border-gray-200 hover:bg-gray-100"
+                            className="hidden md:flex absolute right-4 top-1 p-1.5 globalMediumRadius bg-gray-50 w-12 text-gray-400 border border-gray-200 hover:bg-gray-100"
                         >
                             <Columns2 className={`w-4 h-4 transition-transform ${isCollapsed ? 'rotate-180' : ''}`} />
                         </button>
