@@ -167,7 +167,7 @@ const Dashboard = () => {
                                             <p className="text-xs text-gray-400 font-medium mt-0.5">{activity.date}</p>
                                         </div>
                                     </div>
-                                    <span className={`text-sm font-bold ${activity.isPositive ? "text-emerald-600" : "text-red-500"}`}>
+                                    <span className={`text-sm font-bold ${activity.isPositive ? "globalTextColor" : "text-red-800"}`}>
                                         {activity.amount}
                                     </span>
                                 </div>
@@ -191,7 +191,7 @@ const Dashboard = () => {
                                 Complete your profile to unlock high-paying surveys in the {sector}.
                             </p>
                         </div>
-                        <button className="w-full bg-white hover:bg-gray-50 text-blue-600 font-bold text-xs py-3 globalButtonRadius border border-blue-200 transition-colors shadow-sm">
+                        <button className="w-full globalTextColor hover:bg-gray-50 text-blue-600 font-bold text-xs py-3 globalButtonRadius border border-[#0F4C81] transition-colors shadow-sm">
                             Complete Profile
                         </button>
                     </div>
