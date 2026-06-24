@@ -21,7 +21,7 @@ const SurveyCard = ({ tag, image, title, duration, reward }) => {
                     </div>
                 </div>
                 <div className="flex items-center justify-between pt-2">
-                    <button className="globalBgColor text-white hover:bg-blue-700 font-bold text-xs px-4 py-2.5 globalMediumRadius transition-colors w-full">
+                    <button className="globalLightBg globalTextColor hover:bg-blue-300 hover:text-black font-bold text-xs px-4 py-2.5 globalMediumRadius transition-colors w-full">
                         Start Survey
                     </button>
                 </div>

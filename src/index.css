@@ -41,6 +41,11 @@ body {
     border-style: solid;
     border-color: #8faec9;
 }
+
+.globalLightBg{
+    background-color: #E2F0FD;
+}
+
 /* .globalBorder {
     border-width: 2px;
     border-style: solid;

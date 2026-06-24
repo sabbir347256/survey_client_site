@@ -28,11 +28,21 @@ const Dashboard = () => {
         {
             id: 2,
             tag: "Lifestyle",
-            image: "https://images.unsplash.com/photo-1545231027-63b3f1e99ea3?q=80&w=400",
+            image: "https://penntoday.upenn.edu/sites/default/files/2023-03/survey-research-teaser.jpg",
             title: "Urban Wellness & Habits 2024",
             duration: "8 mins",
             reward: "$8.50"
-        },
+        }
+        ,
+        {
+            id: 3,
+            tag: "Finance",
+            image: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=400",
+            title: "Crypto Adoption & Security Insights",
+            duration: "20 mins",
+            reward: "$26.00"
+        }
+        ,
         {
             id: 3,
             tag: "Finance",
@@ -132,9 +142,9 @@ const Dashboard = () => {
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
                     <h2 className="text-xl font-bold text-gray-900">Recommended Surveys</h2>
-                    <button className="text-sm font-semibold text-blue-600 hover:underline">View All &gt;</button>
+                    <button className="text-sm font-semibold globalTextColor hover:underline">View All &gt;</button>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {recommendedSurveys.map((survey) => (
                         <SurveyCard key={survey.id} {...survey} />
                     ))}
@@ -149,7 +159,7 @@ const Dashboard = () => {
                             {activities.map((activity) => (
                                 <div key={activity.id} className="flex items-center justify-between py-3.5 first:pt-0 last:pb-0">
                                     <div className="flex items-center gap-3">
-                                        <div className={`p-2.5 globalButtonRadius ${getActivityBg(activity.type)}`}>
+                                        <div className={`p-2.5 globalButtonRadius globalLightBg ${getActivityBg(activity.type)}`}>
                                             {getActivityIcon(activity.type)}
                                         </div>
                                         <div>
@@ -157,7 +167,7 @@ const Dashboard = () => {
                                             <p className="text-xs text-gray-400 font-medium mt-0.5">{activity.date}</p>
                                         </div>
                                     </div>
-                                    <span className={`text-sm font-extrabold ${activity.isPositive ? "text-emerald-600" : "text-red-500"}`}>
+                                    <span className={`text-sm font-bold ${activity.isPositive ? "text-emerald-600" : "text-red-500"}`}>
                                         {activity.amount}
                                     </span>
                                 </div>
@@ -166,13 +176,13 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="globalBorder globalButtonRadius bg-[#E2F0FD] p-6 shadow-sm flex flex-col items-center text-center justify-between h-full min-h-[250px]">
+                <div className="globalBorder globalButtonRadius globalLightBg p-6 shadow-sm flex flex-col items-center text-center justify-between h-full min-h-[250px]">
                     <div className="relative w-24 h-24 flex items-center justify-center">
                         <svg className="w-full h-full transform -rotate-90">
                             <circle cx="48" cy="48" r={radius} stroke="#e2e8f0" strokeWidth="8" fill="transparent" />
-                            <circle cx="48" cy="48" r={radius} stroke="#0284c7" strokeWidth="8" fill="transparent" strokeDasharray={circumference} strokeDashoffset={strokeDashoffset} strokeLinecap="round" />
+                            <circle cx="48" cy="48" r={radius} stroke="#0F4C81" strokeWidth="8" fill="transparent" strokeDasharray={circumference} strokeDashoffset={strokeDashoffset} strokeLinecap="round" />
                         </svg>
-                        <span className="absolute text-lg font-extrabold text-gray-800">{profilePercentage}%</span>
+                        <span className="absolute text-lg font-bold text-gray-800">{profilePercentage}%</span>
                     </div>
                     <div className="space-y-4 w-full">
                         <div>
