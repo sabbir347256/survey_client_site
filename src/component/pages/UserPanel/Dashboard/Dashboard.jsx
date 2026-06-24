@@ -65,7 +65,7 @@ const Dashboard = () => {
         return "bg-amber-50";
     };
     return (
-        <div className="space-y-8 p-1">
+        <div className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
                 <div className="lg:col-span-2 pt-4">
                     <h1 className="text-3xl font-extrabold text-[#0F4C81] tracking-tight">Welcome back, {name}!</h1>
@@ -166,7 +166,7 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="globalBorder globalButtonRadius p-6 shadow-sm flex flex-col items-center text-center justify-between h-full min-h-[250px]">
+                <div className="globalBorder globalButtonRadius bg-[#E2F0FD] p-6 shadow-sm flex flex-col items-center text-center justify-between h-full min-h-[250px]">
                     <div className="relative w-24 h-24 flex items-center justify-center">
                         <svg className="w-full h-full transform -rotate-90">
                             <circle cx="48" cy="48" r={radius} stroke="#e2e8f0" strokeWidth="8" fill="transparent" />
