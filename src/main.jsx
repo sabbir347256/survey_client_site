@@ -7,6 +7,7 @@ import { HelmetProvider } from 'react-helmet-next';
 import React from 'react';
 import Layout from './component/pages/Layout/Layout';
 import Dashboard from './component/pages/UserPanel/Dashboard/Dashboard';
+import Underconstraction from './component/pages/Shared/Underconstraction';
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard></Dashboard>
+      },
+      {
+        path: "*",
+        element: <Underconstraction></Underconstraction>
       }
     ]
   }
