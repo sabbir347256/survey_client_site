@@ -10,6 +10,7 @@ import Dashboard from './component/pages/UserPanel/Dashboard/Dashboard';
 import Underconstraction from './component/pages/Shared/Underconstraction';
 import MySurvey from './component/pages/UserPanel/MySurvey/MySurvey';
 import Rewards from './component/pages/UserPanel/Rewards/Rewards';
+import Insight from './component/pages/UserPanel/Insight/Insight';
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/rewards',
         element: <Rewards></Rewards>
+      },
+      {
+        path: '/insights',
+        element: <Insight></Insight>
       },
       {
         path: "*",
