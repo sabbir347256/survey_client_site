@@ -11,6 +11,7 @@ import Underconstraction from './component/pages/Shared/Underconstraction';
 import MySurvey from './component/pages/UserPanel/MySurvey/MySurvey';
 import Rewards from './component/pages/UserPanel/Rewards/Rewards';
 import Insight from './component/pages/UserPanel/Insight/Insight';
+import Userprofile from './component/pages/UserPanel/UserProfile/Userprofile';
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/insights',
         element: <Insight></Insight>
+      },
+      {
+        path: '/user-profile',
+        element: <Userprofile></Userprofile>
       },
       {
         path: "*",

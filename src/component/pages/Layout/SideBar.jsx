@@ -10,7 +10,7 @@ const SideBar = ({ isOpen, closeSidebar, isCollapsed, setIsCollapsed }) => {
     ];
 
     const bottomItems = [
-        { path: '/settings', label: 'Settings', icon: Settings },
+        // { path: '/settings', label: 'Settings', icon: Settings },
         { path: '/logout', label: 'Logout', icon: LogOut },
     ];
 
@@ -50,7 +50,7 @@ const SideBar = ({ isOpen, closeSidebar, isCollapsed, setIsCollapsed }) => {
                         </button>
                     </div>
 
-                    <nav className="flex flex-col gap-0.5 px-2">
+                    <div className="flex flex-col gap-0.5 px-2">
                         {menuItems.map((item) => {
                             const Icon = item.icon;
                             return (
@@ -75,16 +75,16 @@ const SideBar = ({ isOpen, closeSidebar, isCollapsed, setIsCollapsed }) => {
                                 </NavLink>
                             );
                         })}
-                    </nav>
+                    </div>
                 </div>
 
                 <div className="flex flex-col gap-1 px-2 overflow-x-hidden">
-                    <div className={`px-4 my-2 ${isCollapsed ? 'md:px-2' : ''}`}>
+                    {/* <div className={`px-4 my-2 ${isCollapsed ? 'md:px-2' : ''}`}>
                         <button className={`w-full globalBgColor text-white font-medium text-[14px] py-3 globalButtonRadius flex items-center justify-center gap-2 hover:bg-[#0096d1] transition-all duration-200 shadow-sm ${isCollapsed ? 'md:p-2' : ''}`}>
                             <Zap className="w-4 h-4 fill-current flex-shrink-0" />
                             <span className={`${isCollapsed ? 'md:hidden' : 'block'} whitespace-nowrap`}>Start Quick Survey</span>
                         </button>
-                    </div>
+                    </div> */}
 
                     <div className="mx-4 my-2 border-t border-gray-100"></div>
 
