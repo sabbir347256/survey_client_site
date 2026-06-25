@@ -17,35 +17,35 @@ const RewardsCards = ({ card }) => {
     };
 
     return (
-       <div className={`p-5 border border-gray-100 flex flex-col justify-between h-full transition-all duration-300 hover:shadow-md ${card.isSpecial ? 'bg-indigo-50/40 globalCardRadius border-indigo-100' : 'bg-white globalCardRadius'}`}>
-      <div>
-        <div className={`w-full h-32 rounded-xl flex items-center justify-center mb-4 ${card.imageBg}`}>
-          <div className="p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
-            {getIcon(card.title)}
-          </div>
-        </div>
-        
-        <h3 className="font-bold text-gray-800 text-base mb-1">{card.title}</h3>
-        <p className="text-gray-400 text-xs leading-relaxed mb-4 min-h-[32px]">{card.desc}</p>
-      </div>
+        <div className={`p-5 globalBorder flex flex-col justify-between h-full transition-all duration-300 hover:shadow-md ${card.isSpecial ? 'bg-indigo-50/40 globalCardRadius border-indigo-100' : 'bg-white globalCardRadius'}`}>
+            <div>
+                <div className={`w-full h-32 rounded-xl flex items-center justify-center mb-4 ${card.imageBg}`}>
+                    <div className="p-3 bg-white/80 backdrop-blur-sm rounded-xl shadow-sm">
+                        {getIcon(card.title)}
+                    </div>
+                </div>
 
-      <div>
-        <div className="flex items-center justify-between text-xs font-semibold mb-4 bg-gray-50/70 p-2.5 rounded-lg">
-          <span className="globalTextColor">{card.pointsRange}</span>
-          <span className="text-gray-400">{card.valueRange}</span>
-        </div>
+                <h3 className="font-bold text-gray-800 text-base mb-1">{card.title}</h3>
+                <p className="text-gray-400 text-xs leading-relaxed mb-4 min-h-[32px]">{card.desc}</p>
+            </div>
 
-        {card.isSpecial ? (
-          <button className="w-full globalBgColor hover:opacity-90 text-white font-semibold py-2.5 globalButtonRadius text-sm transition-all shadow-sm">
-            {card.btnText}
-          </button>
-        ) : (
-          <button className="w-full bg-slate-50 border border-slate-200 text-slate-700 font-semibold py-2.5 globalButtonRadius text-sm hover:bg-slate-100 transition-all">
-            {card.btnText}
-          </button>
-        )}
-      </div>
-    </div>
+            <div>
+                <div className="flex items-center justify-between text-xs font-semibold mb-4 bg-gray-50/70 p-2.5 rounded-lg">
+                    <span className="globalTextColor">{card.pointsRange}</span>
+                    <span className="text-gray-400">{card.valueRange}</span>
+                </div>
+
+                {card.isSpecial ? (
+                    <button className="w-full globalBgColor hover:opacity-90 text-white font-semibold py-2.5 globalButtonRadius text-sm transition-all shadow-sm">
+                        {card.btnText}
+                    </button>
+                ) : (
+                    <button className="w-full globalLightBg border border-slate-200 text-slate-700 font-semibold py-2.5 globalButtonRadius text-sm hover:bg-slate-100 transition-all">
+                        {card.btnText}
+                    </button>
+                )}
+            </div>
+        </div>
     );
 };
 
