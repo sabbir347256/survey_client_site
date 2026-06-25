@@ -8,6 +8,7 @@ import React from 'react';
 import Layout from './component/pages/Layout/Layout';
 import Dashboard from './component/pages/UserPanel/Dashboard/Dashboard';
 import Underconstraction from './component/pages/Shared/Underconstraction';
+import MySurvey from './component/pages/UserPanel/MySurvey/MySurvey';
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard></Dashboard>
+      },
+      {
+        path: '/my-surveys',
+        element: <MySurvey></MySurvey>
       },
       {
         path: "*",
