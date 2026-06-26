@@ -1,6 +1,6 @@
 import {  Award, CheckCircle2, Trophy, Wallet } from "lucide-react";
 import SurveyCard from "../surveyCards/SurveyCard";
-import SurveyComponent from "./NewCards";
+import SurveyComponent from "./SurveyComponent";
 
 const Dashboard = () => {
     const name = "Sabbir";
