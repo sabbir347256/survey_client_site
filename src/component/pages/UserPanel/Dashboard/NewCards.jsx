@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import config from '../../utils/envconfig';
 
 const SurveyComponent = () => {
     const [isReady, setIsReady] = useState(false);
@@ -27,7 +26,7 @@ const SurveyComponent = () => {
                     height="800"
                     scrolling="yes"
                     frameBorder="0"
-                    src={`https://www.lootwalls.com/wall?apiKey=${config.SURVEY_API_KEY}&userId=6a3e51e0b5c05e31aaf44884`}
+                    src="https://www.lootwalls.com/wall?apiKey=HDkDw7TgMooqRJVyiSqdZg3aDXeCFOg3&userId=6a3e51e0b5c05e31aaf44884"
                     title="Lootwalls Survey"
                     style={{
                         width: '100%',
