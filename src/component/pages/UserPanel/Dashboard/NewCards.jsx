@@ -42,7 +42,7 @@ const SurveyComponent = () => {
                 />
             ) : (
                 <div className="flex items-center justify-center h-[800px]">
-                    <p className="text-gray-500 font-medium">Loading survey wall safely...</p>
+                    <p className="text-gray-500 font-medium">Loading survey wall safel.</p>
                 </div>
             )}
         </div>
