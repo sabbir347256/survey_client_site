@@ -2,7 +2,7 @@ import config from "../../utils/envconfig";
 import lootwal from '../../../../images/lootwall.jpeg';
 
 const SurveyComponent = () => {
-  const apiKey = config.VIT_SURVEY_API_KEY;
+  const apiKey = config.VITE_SURVEY_API_KEY;
   const userId = "6a3e51e0b5c05e31aaf44884";
   const surveyUrl = `https://www.lootwalls.com/wall?apiKey=${apiKey}&userId=${userId}`;
 
