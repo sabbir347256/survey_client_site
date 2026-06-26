@@ -12,6 +12,7 @@ import MySurvey from './component/pages/UserPanel/MySurvey/MySurvey';
 import Rewards from './component/pages/UserPanel/Rewards/Rewards';
 import Insight from './component/pages/UserPanel/Insight/Insight';
 import Userprofile from './component/pages/UserPanel/UserProfile/Userprofile';
+import UserLogin from './component/pages/Authentication/UserLogin';
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         element: <Underconstraction></Underconstraction>
       }
     ]
+  },
+  {
+    path: '/user-login',
+    element: <UserLogin></UserLogin>
   }
 ]);
 

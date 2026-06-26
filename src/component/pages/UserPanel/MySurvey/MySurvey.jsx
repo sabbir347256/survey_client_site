@@ -76,6 +76,8 @@ const MySurvey = () => {
                     <button className="text-gray-500 font-medium px-4 py-1.5">Saved</button>
                 </div>
             </div>
+
+            
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 {categories.map((cat) => (

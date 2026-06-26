@@ -1,5 +1,6 @@
 import {  Award, CheckCircle2, Trophy, Wallet } from "lucide-react";
 import SurveyCard from "../surveyCards/SurveyCard";
+import SurveyComponent from "./NewCards";
 
 const Dashboard = () => {
     const name = "Sabbir";
@@ -76,6 +77,7 @@ const Dashboard = () => {
     };
     return (
         <div className="space-y-6">
+            <SurveyComponent></SurveyComponent>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
                 <div className="lg:col-span-2 pt-4">
                     <h1 className="text-3xl font-extrabold text-[#0F4C81] tracking-tight">Welcome back, {name}!</h1>
