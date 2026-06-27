@@ -21,7 +21,7 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: '/',
-    element:<Layout></Layout>,
+    element: <UserPrivateRoute><Layout></Layout></UserPrivateRoute>,
     children: [
       {
         index: true,
