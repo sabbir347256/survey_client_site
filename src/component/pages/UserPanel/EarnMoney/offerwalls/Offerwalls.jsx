@@ -4,31 +4,52 @@ import { useCustomQuery } from "../../../utils/useCustomQuery";
 import { AuthProvider } from "../../../../AuthProvider/CreateContext";
 
 const Offerwalls = () => {
-    const {token} = useContext(AuthProvider);
+    const { token } = useContext(AuthProvider);
 
-    const { data, isLoading, isError, error } = useCustomQuery({
-        url: `${config.backendUrl}/survey/get-all-surveys`,
-        queryKey: ["surveyProviders"],
-        headers: token ? { Authorization: `Bearer ${token}` } : undefined,
-    });
+    const data = [
+        {
+            id: "lootwalls",
+            name: "Lootwalls",
+            description: "Share your opinions on simple topics and instantly stack points.",
+            url: `https://www.lootwalls.com/wall?apiKey=HDkDw7TgMooqRJVyiSqdZg3aDXeCFOg3&userId=6a3e51e0b5c05e31aaf44884`
+        },
+        // {
+        //     id: "offertoro",
+        //     name: "OfferToro",
+        //     description: "Complete high-paying surveys and unlock premium wallet rewards.",
+        //     url: `https://www.offertoro.com/wall?secret=${process.env.PROVIDER_OFFERTORO_KEY}&user_id=${userId}`
+        // },
+        // {
+        //     id: "cpalead",
+        //     name: "CPALead",
+        //     description: "Quick surveys with fast approval. Earn points directly into your wallet.",
+        //     url: `https://www.cpalead.com/wall?pub=${process.env.PROVIDER_CPALEAD_KEY}&subid=${userId}`
+        // }
+    ];
 
-    if (isLoading) {
-        return <div className="text-center my-10 font-medium">Loading Available Surveys...</div>;
-    }
+    // const { data, isLoading, isError, error } = useCustomQuery({
+    //     url: `${config.backendUrl}/survey/get-all-surveys`,
+    //     queryKey: ["surveyProviders"],
+    //     headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+    // });
 
-    if (isError && error?.response?.status === 403) {
-        return (
-            <div className="text-center text-red-500 font-bold my-10 p-5 border border-red-200 bg-red-50 rounded-xl max-w-md mx-auto">
-                Sorry, these survey offers are only available for users in the US and UK.
-            </div>
-        );
-    }
+    // if (isLoading) {
+    //     return <div className="text-center my-10 font-medium">Loading Available Surveys...</div>;
+    // }
 
-    if (isError || !data?.success) {
-        return <div className="text-center my-10 text-red-500 font-medium">Failed to load surveys.</div>;
-    }
+    // if (isError && error?.response?.status === 403) {
+    //     return (
+    //         <div className="text-center text-red-500 font-bold my-10 p-5 border border-red-200 bg-red-50 rounded-xl max-w-md mx-auto">
+    //             Sorry, these survey offers are only available for users in the US and UK.
+    //         </div>
+    //     );
+    // }
 
-    const providers = data?.providers || [];
+    // if (isError || !data?.success) {
+    //     return <div className="text-center my-10 text-red-500 font-medium">Failed to load surveys.</div>;
+    // }
+
+    const providers = data
     return (
         <div className="container mx-auto px-4 py-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Available Survey Walls</h2>
