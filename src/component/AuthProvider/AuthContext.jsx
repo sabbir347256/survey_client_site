@@ -1,7 +1,11 @@
+import { useMemo, useState } from "react";
 import { AuthProvider } from "./CreateContext";
+import { useQuery } from "@tanstack/react-query";
+import config from "../pages/utils/envconfig";
+import { jwtDecode } from "jwt-decode";
 
 const AuthContext = ({ children }) => {
-  // const [token, setToken] = useState(() => localStorage.getItem("accessToken"));
+  const [token, setToken] = useState(() => localStorage.getItem("accessToken"));
 
 
   // const { data, isLoading, refetch } = useQuery({
@@ -21,25 +25,25 @@ const AuthContext = ({ children }) => {
   //     }),
   // });
 
-  // const user = useMemo(() => {
-  //   if (!token) return null;
-  //   try {
-  //     return jwtDecode(token);
-  //   } catch (error) {
-  //     console.error("JWT Decode Error:", error);
-  //     return null;
-  //   }
-  // }, [token]);
+  const user = useMemo(() => {
+    if (!token) return null;
+    try {
+      return jwtDecode(token);
+    } catch (error) {
+      console.error("JWT Decode Error:", error);
+      return null;
+    }
+  }, [token]);
 
 
-  // const loading = false;
+  const loading = false;
 
   const authInfo = {
-    // setToken,
-    // token,
-    // user,
-    // role: user?.role,
-    // loading,
+    setToken,
+    token,
+    user,
+    role: user?.role,
+    loading,
     // data, 
     // isLoading, 
     // refetch

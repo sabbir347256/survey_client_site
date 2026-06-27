@@ -1,20 +1,31 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { makeRequest } from "../utils/makerequest";
 import config from "../utils/envconfig";
+import { Toaster } from "sonner";
+import { AuthProvider } from "../../AuthProvider/CreateContext";
+import { useNavigate } from "react-router";
 
 const UserLogin = () => {
+    const { token, user } = useContext(AuthProvider);
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate();
 
     const onSubmit = async (data) => {
-        const res = await makeRequest("POST", `${config.backendUrl}/user/respondent-login`, data);
-        if (res) {
-            localStorage.setItem('token', res.token);
+        const res = await makeRequest("POST", `${config.backendUrl}/auth/login`, data);
+        if (res && res.success === true) {
+            localStorage.setItem('accessToken', res.data.accessToken);
+            setTimeout(() => {
+                navigate('/');
+                window.location.reload();
+            }, 1000);
+
         }
     };
     return (
         <div className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-white">
+            <Toaster position="top-right"></Toaster>
             <div className="hidden lg:flex flex-col justify-between bg-[#3ca4c4] p-16 text-white relative overflow-hidden">
 
                 <div className="my-auto relative z-10 flex flex-col items-start gap-6">
@@ -34,7 +45,7 @@ const UserLogin = () => {
                     </div>
                 </div>
 
-                
+
             </div>
 
             <div className="flex flex-col justify-center items-center px-6 sm:px-16 lg:px-24 py-12 bg-gray-50/30">

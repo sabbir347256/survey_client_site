@@ -4,8 +4,8 @@ import { showToast } from "./toastmessage";
 export const makeRequest = async (method, url, data = null) => {
     try {
         const token = localStorage.getItem('token');
-
         const headers = {};
+        
         if (token) {
             headers.Authorization = `Bearer ${token}`;
         }
@@ -21,8 +21,11 @@ export const makeRequest = async (method, url, data = null) => {
             showToast.success(response.data.message || "Success!");
             return response.data;
         }
-    } catch (error) {
-        showToast.error(error.response?.data?.message || "Something went wrong");
+        
         return null;
+    } catch (error) {
+        const errorMessage = error.response?.data?.message || "Something went wrong";
+        showToast.error(errorMessage);
+        return error.response?.data || null;
     }
 };

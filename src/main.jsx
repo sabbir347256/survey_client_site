@@ -13,13 +13,15 @@ import Rewards from './component/pages/UserPanel/Rewards/Rewards';
 import Insight from './component/pages/UserPanel/Insight/Insight';
 import Userprofile from './component/pages/UserPanel/UserProfile/Userprofile';
 import UserLogin from './component/pages/Authentication/UserLogin';
+import UserPrivateRoute from './component/pages/privateroute/UserPrivateRoute';
+import Offerwalls from './component/pages/UserPanel/EarnMoney/offerwalls/Offerwalls';
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout></Layout>,
+    element: <UserPrivateRoute><Layout></Layout></UserPrivateRoute>,
     children: [
       {
         index: true,
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: '/user-profile',
         element: <Userprofile></Userprofile>
+      },
+      {
+        path: '/Offerwalls',
+        element: <Offerwalls></Offerwalls>
       },
       {
         path: "*",
