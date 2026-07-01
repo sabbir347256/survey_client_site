@@ -4,7 +4,7 @@ import Zamplia from "./zamplia/Zamplia";
 const Offerwalls = () => {
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div>
             <Lootwalls></Lootwalls>
             <Zamplia></Zamplia>
         </div>

@@ -43,9 +43,9 @@ const Zamplia = () => {
 
     if (loading) return <div>Loading available tasks...</div>;
     return (
-        <div style={{ padding: '24px', fontFamily: 'sans-serif' }}>
-            <h2>Available Survey Assignments</h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+        <div className="py-4">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 ">Zamplia Survey</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                 {surveys.map((survey) => (
                     <div
                         key={survey?.SurveyId}
