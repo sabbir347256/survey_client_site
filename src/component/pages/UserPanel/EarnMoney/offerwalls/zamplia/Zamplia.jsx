@@ -1,7 +1,11 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import config from '../../../../utils/envconfig';
+import { AuthProvider } from '../../../../../AuthProvider/CreateContext';
 
 const Zamplia = () => {
+    const { user } = useContext(AuthProvider);
+    const employeeId = user?.userID;
     const [surveys, setSurveys] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -23,9 +27,11 @@ const Zamplia = () => {
         }
     };
 
+    console.log(surveys)
+
     const handleTakeSurvey = async (surveyId) => {
         try {
-            const res = await axios.post('/api/surveys/start', { surveyId, employeeId });
+            const res = await axios.post(`${config.backendUrl}/zampila/surveys/start`, { surveyId, employeeId });
             if (res.data.success && res.data.entryLink) {
                 window.location.href = res.data.entryLink;
             }
@@ -34,17 +40,36 @@ const Zamplia = () => {
         }
     };
 
+
     if (loading) return <div>Loading available tasks...</div>;
     return (
         <div style={{ padding: '24px', fontFamily: 'sans-serif' }}>
             <h2>Available Survey Assignments</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
                 {surveys.map((survey) => (
-                    <div key={survey.surveyId} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '16px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                        <h3>{survey.name}</h3>
-                        <p><strong>Duration:</strong> {survey.loi} Mins</p>
-                        <p><strong>Payout:</strong> ${survey.cpi}</p>
-                        <button onClick={() => handleTakeSurvey(survey.surveyId)} style={{ backgroundColor: '#0070f3', color: '#fff', border: 'none', borderRadius: '4px', padding: '10px 16px', cursor: 'pointer', width: '100%' }}>
+                    <div
+                        key={survey?.SurveyId}
+                        className="max-w-sm bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between h-full"
+                    >
+                        <div>
+                            <h3 className="text-lg font-bold text-gray-800 line-clamp-2 mb-4 tracking-tight leading-snug">
+                                {survey.name}
+                            </h3>
+                            <div className="flex items-center justify-between text-sm mb-6 bg-gray-50 p-3 rounded-xl">
+                                <div className="flex flex-col">
+                                    <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Duration</span>
+                                    <span className="font-semibold text-gray-700 mt-0.5">{survey.LOI} Mins</span>
+                                </div>
+                                <div className="flex flex-col text-right">
+                                    <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Payout</span>
+                                    <span className="font-bold text-green-600 text-base mt-0.5">${survey.CPI}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => handleTakeSurvey(survey.SurveyId)}
+                            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl tracking-wide shadow-lg shadow-indigo-200 py-3 text-center block transition-all"
+                        >
                             Start Task
                         </button>
                     </div>
