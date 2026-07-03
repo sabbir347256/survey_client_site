@@ -27,7 +27,6 @@ const Zamplia = () => {
         }
     };
 
-    console.log(surveys)
 
     const handleTakeSurvey = async (surveyId) => {
         try {
