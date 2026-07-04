@@ -1,5 +1,6 @@
 import Goweb from "./goweb/Goweb";
 import Lootwalls from "./lootwalls/Lootwalls";
+import OpinionGold from "./Opinion/OpinionGold";
 import Zamplia from "./zamplia/Zamplia";
 
 const Offerwalls = () => {
@@ -9,6 +10,7 @@ const Offerwalls = () => {
             <Lootwalls></Lootwalls>
             <Zamplia></Zamplia>
             <Goweb></Goweb>
+            <OpinionGold></OpinionGold>
         </div>
     );
 };
