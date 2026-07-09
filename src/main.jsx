@@ -15,6 +15,7 @@ import Userprofile from './component/pages/UserPanel/UserProfile/Userprofile';
 import UserLogin from './component/pages/Authentication/UserLogin';
 import UserPrivateRoute from './component/pages/privateroute/UserPrivateRoute';
 import Offerwalls from './component/pages/UserPanel/EarnMoney/offerwalls/Offerwalls';
+import RegistrationPage from './component/pages/Authentication/RegistrationPage';
 
 const queryClient = new QueryClient();
 
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
   {
     path: '/user-login',
     element: <UserLogin></UserLogin>
+  },
+  {
+    path: '/user-registration',
+    element: <RegistrationPage></RegistrationPage>
   }
 ]);
 

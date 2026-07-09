@@ -4,7 +4,7 @@ import { makeRequest } from "../utils/makerequest";
 import config from "../utils/envconfig";
 import { Toaster } from "sonner";
 import { AuthProvider } from "../../AuthProvider/CreateContext";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 const UserLogin = () => {
     const { token, user } = useContext(AuthProvider);
@@ -144,7 +144,16 @@ const UserLogin = () => {
                             Sign In to SurveyPanel
                         </button>
                     </form>
+                    <div className="text-center mt-4">
+                        <p className="text-sm text-gray-500">
+                            Don't have an account? Please{" "}
+                            <NavLink to="/user-registration" className="font-semibold text-[#0066b2] hover:underline">
+                                Register Now
+                            </NavLink>
+                        </p>
+                    </div>
                 </div>
+
             </div>
         </div>
     );

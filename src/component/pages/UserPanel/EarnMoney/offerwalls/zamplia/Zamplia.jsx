@@ -9,9 +9,6 @@ const Zamplia = () => {
     const [surveys, setSurveys] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        fetchLiveSurveys();
-    }, []);
 
     const fetchLiveSurveys = async () => {
         setLoading(true);
@@ -26,6 +23,10 @@ const Zamplia = () => {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        fetchLiveSurveys();
+    }, []);
 
 
     const handleTakeSurvey = async (surveyId) => {
