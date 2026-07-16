@@ -55,14 +55,14 @@ const router = createBrowserRouter([
   //     }
   //   ]
   // },
-  // {
-  //   path: "*",
-  //   element: <Underconstraction></Underconstraction>
-  // },
   {
     path: "*",
-    element: <AlartComponent></AlartComponent>
+    element: <Underconstraction></Underconstraction>
   },
+  // {
+  //   path: "*",
+  //   element: <AlartComponent></AlartComponent>
+  // },
   // {
   //   path: '/user-login',
   //   element: <UserLogin></UserLogin>
