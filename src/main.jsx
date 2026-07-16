@@ -16,52 +16,61 @@ import UserLogin from './component/pages/Authentication/UserLogin';
 import UserPrivateRoute from './component/pages/privateroute/UserPrivateRoute';
 import Offerwalls from './component/pages/UserPanel/EarnMoney/offerwalls/Offerwalls';
 import RegistrationPage from './component/pages/Authentication/RegistrationPage';
+import AlartComponent from './component/pages/Shared/AlartComponent';
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
+  // {
+  //   path: '/',
+  //   element: <UserPrivateRoute><Layout></Layout></UserPrivateRoute>,
+  //   children: [
+  //     {
+  //       index: true,
+  //       element: <Dashboard></Dashboard>
+  //     },
+  //     {
+  //       path: '/my-surveys',
+  //       element: <MySurvey></MySurvey>
+  //     },
+  //     {
+  //       path: '/rewards',
+  //       element: <Rewards></Rewards>
+  //     },
+  //     {
+  //       path: '/insights',
+  //       element: <Insight></Insight>
+  //     },
+  //     {
+  //       path: '/user-profile',
+  //       element: <Userprofile></Userprofile>
+  //     },
+  //     {
+  //       path: '/Offerwalls',
+  //       element: <Offerwalls></Offerwalls>
+  //     },
+  //     {
+  //       path: "*",
+  //       element: <Underconstraction></Underconstraction>
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "*",
+  //   element: <Underconstraction></Underconstraction>
+  // },
   {
-    path: '/',
-    element: <UserPrivateRoute><Layout></Layout></UserPrivateRoute>,
-    children: [
-      {
-        index: true,
-        element: <Dashboard></Dashboard>
-      },
-      {
-        path: '/my-surveys',
-        element: <MySurvey></MySurvey>
-      },
-      {
-        path: '/rewards',
-        element: <Rewards></Rewards>
-      },
-      {
-        path: '/insights',
-        element: <Insight></Insight>
-      },
-      {
-        path: '/user-profile',
-        element: <Userprofile></Userprofile>
-      },
-      {
-        path: '/Offerwalls',
-        element: <Offerwalls></Offerwalls>
-      },
-      {
-        path: "*",
-        element: <Underconstraction></Underconstraction>
-      }
-    ]
+    path: "*",
+    element: <AlartComponent></AlartComponent>
   },
-  {
-    path: '/user-login',
-    element: <UserLogin></UserLogin>
-  },
-  {
-    path: '/user-registration',
-    element: <RegistrationPage></RegistrationPage>
-  }
+  // {
+  //   path: '/user-login',
+  //   element: <UserLogin></UserLogin>
+  // },
+  // {
+  //   path: '/user-registration',
+  //   element: <RegistrationPage></RegistrationPage>
+  // }
 ]);
 
 createRoot(document.getElementById('root')).render(
